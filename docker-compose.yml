@@ -1,13 +1,15 @@
 version: '3'
 services:
   nginx:
-    image: repo.treescale.com/oleggromov/nginx-frontend:0.2
+    image: repo.treescale.com/oleggromov/nginx-frontend:0.3
     ports:
       - 80:80
     # the links should be explicitly set in order to work
     links:
       - counter-demo
       # - ctr
+    depends_on:
+      - counter-demo
 
   counter-demo:
     image: repo.treescale.com/oleggromov/counter-app:0.2-demo
