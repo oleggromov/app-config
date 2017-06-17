@@ -1,9 +1,18 @@
 version: '3'
 services:
-  app:
-    image: repo.treescale.com/oleggromov/counter_app:0.0.1-3
+  nginx:
+    image: repo.treescale.com/oleggromov/nginx-frontend:0.2
     ports:
-      - 80:3000
+      - 80:80
+    # the links should be explicitly set in order to work
+    links:
+      - counter-demo
+      # - ctr
+
+  counter-demo:
+    image: repo.treescale.com/oleggromov/counter-app:0.2-demo
+    expose:
+      - '3000'
     env_file:
       - secrets/counter.env
     environment:
@@ -11,8 +20,19 @@ services:
     depends_on:
       - mysql
 
+  # ctr:
+  #   image: repo.treescale.com/oleggromov/counter_app:0.0.1-3
+  #   expose:
+  #     - '3000'
+  #   env_file:
+  #     - secrets/counter.env
+  #   environment:
+  #     NODE_ENV: production
+  #   depends_on:
+  #     - mysql
+
   mysql:
-    image: repo.treescale.com/oleggromov/counter_mysql:0.0.1-first
+    image: repo.treescale.com/oleggromov/counter-mysql:0.3
     expose:
       - '3306'
     env_file:
