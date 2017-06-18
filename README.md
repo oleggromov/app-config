@@ -4,9 +4,14 @@ This repository contains configuration files for some applications being run in 
 
 **Likely you don't need anything from here!** Anyway, if the stuff found here draws your attention don't hesitate to ask any questions using *issues* or *email from my profile*.
 
-## Not to forget
+## How to run a new version
 
 - encrypt/decrypt secret files with `./scripts/encdec.sh` command
+- pull the right images `docker-compose pull`
+- start new services `docker-compose up -d`
+- login to mysql container and create databases if not yet created
+- **HOW?** Clean up unused images from the HDD
+- enjoy
 
 ## Basic config
 
