@@ -37,7 +37,7 @@ services:
       - mysql
 
   mysql:
-    image: repo.treescale.com/oleggromov/counter-mysql:0.5
+    image: repo.treescale.com/oleggromov/counter-mysql:0.4
     expose:
       - '3306'
     env_file:
