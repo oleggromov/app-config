@@ -1,2 +1,6 @@
 .DS_Store
 secrets/counter.env
+secrets/counter-demo.env
+secrets/counter-dev.env
+secrets/counter-live.env
+secrets/counter-mysql.env
