@@ -8,6 +8,7 @@ This repository contains configuration files for some applications being run in 
 
 - encrypt/decrypt secret files with `./scripts/encdec.sh` command
 - pull the right images `docker-compose pull`
+- create a data folder: `mkdir -p ~/counter-mysql-data`
 - start new services `docker-compose up -d`
 - login to mysql container and create databases if not yet created
 - **HOW?** Clean up unused images from the HDD
