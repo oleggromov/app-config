@@ -1,0 +1,30 @@
+version: '3'
+services:
+  counter-dev:
+    build:
+      context: ../counter
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    ports:
+      - 3000:3000
+    env_file:
+      - secrets/counter-dev.env
+    environment:
+      NODE_ENV: development
+    command: npm run express
+    volumes:
+      - ../counter:/usr/src/app
+    depends_on:
+      - mysql
+
+  mysql:
+    build:
+      context: ../counter-mysql
+      dockerfile: Dockerfile
+    expose:
+      - '3306'
+    env_file:
+      - secrets/counter-dev.env
+    volumes:
+      - ../counter-mysql/temp-data:/var/lib/mysql
