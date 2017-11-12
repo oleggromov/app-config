@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    image: repo.treescale.com/oleggromov/nginx-frontend:0.6
+    image: repo.treescale.com/oleggromov/nginx-frontend:0.7
     ports:
       - 80:80
     # the links should be explicitly set in order to work
