@@ -13,7 +13,7 @@ services:
       - ctr
 
   pixel:
-    image: repo.treescale.com/oleggromov/pixel:0.1
+    image: repo.treescale.com/oleggromov/pixel:0.2
     ports:
       - 3002:3002
     expose:
