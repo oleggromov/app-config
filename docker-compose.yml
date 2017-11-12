@@ -22,36 +22,36 @@ services:
     environment:
       NODE_ENV: production
 
-  counter-demo:
-    image: repo.treescale.com/oleggromov/counter-app:0.3
-    expose:
-      - '3000'
-    env_file:
-      - secrets/counter.env
-      - secrets/counter-demo.env
-    environment:
-      NODE_ENV: production
-    depends_on:
-      - mysql
+  # counter-demo:
+  #   image: repo.treescale.com/oleggromov/counter-app:0.3
+  #   expose:
+  #     - '3000'
+  #   env_file:
+  #     - secrets/counter.env
+  #     - secrets/counter-demo.env
+  #   environment:
+  #     NODE_ENV: production
+  #   depends_on:
+  #     - mysql
 
-  ctr:
-    image: repo.treescale.com/oleggromov/counter-app:0.3
-    expose:
-      - '3000'
-    env_file:
-      - secrets/counter.env
-      - secrets/counter-live.env
-    environment:
-      NODE_ENV: production
-    depends_on:
-      - mysql
+  # ctr:
+  #   image: repo.treescale.com/oleggromov/counter-app:0.3
+  #   expose:
+  #     - '3000'
+  #   env_file:
+  #     - secrets/counter.env
+  #     - secrets/counter-live.env
+  #   environment:
+  #     NODE_ENV: production
+  #   depends_on:
+  #     - mysql
 
-  mysql:
-    image: repo.treescale.com/oleggromov/counter-mysql:0.5
-    expose:
-      - '3306'
-    env_file:
-      - secrets/counter.env
-      - secrets/counter-mysql.env
-    volumes:
-      - ~/counter-mysql-data:/var/lib/mysql
+  # mysql:
+  #   image: repo.treescale.com/oleggromov/counter-mysql:0.5
+  #   expose:
+  #     - '3306'
+  #   env_file:
+  #     - secrets/counter.env
+  #     - secrets/counter-mysql.env
+  #   volumes:
+  #     - ~/counter-mysql-data:/var/lib/mysql
