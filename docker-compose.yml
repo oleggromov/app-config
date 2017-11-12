@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    image: repo.treescale.com/oleggromov/nginx-frontend:0.4
+    image: repo.treescale.com/oleggromov/nginx-frontend:0.5
     ports:
       - 80:80
     # the links should be explicitly set in order to work
@@ -11,6 +11,14 @@ services:
     depends_on:
       - counter-demo
       - ctr
+
+  pixel:
+    image: repo.treescale.com/oleggromov/pixel:0.1
+    expose:
+      - '3000'
+      - '3002'
+    environment:
+      NODE_ENV: production
 
   counter-demo:
     image: repo.treescale.com/oleggromov/counter-app:0.3
