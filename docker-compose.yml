@@ -6,18 +6,19 @@ services:
       - 80:80
     # the links should be explicitly set in order to work
     links:
-      - counter-demo
-      - ctr
+      - pixel
+      # - counter-demo
+      # - ctr
     depends_on:
-      - counter-demo
-      - ctr
+      - pixel
+      # - counter-demo
+      # - ctr
 
   pixel:
-    image: repo.treescale.com/oleggromov/pixel:0.6
+    image: repo.treescale.com/oleggromov/pixel:demo
     ports:
       - 3002:3002
     expose:
-      - '3000'
       - '3002'
     environment:
       NODE_ENV: production
